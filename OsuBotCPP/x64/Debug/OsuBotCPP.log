@@ -1,0 +1,14 @@
+﻿  objects_play.cpp
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(9,23): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(23,23): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(69,28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(69,15): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(70,28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(70,15): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(93,30): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(110,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(111,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(112,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(125,37): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\דולב\source\repos\OsuBotCPP\OsuBotCPP\objects_play.cpp(130,29): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  OsuBotCPP.vcxproj -> C:\Users\דולב\source\repos\OsuBotCPP\x64\Debug\OsuBotCPP.exe
