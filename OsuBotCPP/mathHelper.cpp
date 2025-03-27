@@ -4,15 +4,30 @@ namespace mathUtil {
 		return sqrtf(powf(a.y - b.y, 2) + powf(a.x - b.x, 2));
 	}
 
-	// Using 3 points, calculate the circle's center
-	Point circleCenterByPoints(const std::vector<Point>& points) {
-		float ma = (points[1].y - points[0].y + .0f) / (points[1].x - points[0].x);
-		float mb = (points[2].y - points[1].y + .0f) / (points[2].x - points[1].x);
-
+	// Source: https://paulbourke.net/geometry/circlesphere/
+	Point _circleCenterBy3Points(const Point& p0, const Point& p1, const Point& p2) {
 		Point center;
-		center.x = (ma * mb * (points[0].y - points[2].y) + mb * (points[0].x + points[1].x) - ma * (points[1].x + points[2].x)) / (2 * (mb - ma));
-		center.y = (-1.0 / ma) * (center.x - (points[0].x + points[1].x) / 2.0) + (points[0].y + points[1].y) / 2.0;
+
+		float ma = (p1.y - p0.y + .0f) / (p1.x - p0.x);
+		float mb = (p2.y - p1.y + .0f) / (p2.x - p1.x);
+
+		center.x = (ma * mb * (p0.y - p2.y) + mb * (p0.x + p1.x) - ma * (p1.x + p2.x)) / (2 * (mb - ma));
+		center.y = (-1.0 / ma) * (center.x - (p0.x + p1.x) / 2.0) + (p0.y + p1.y) / 2.0;
 		return center;
+	}
+
+	Point circleCenterByPoints(const std::vector<Point>& points) {
+		// Don't use a vertical line formed by two points that have the same x value
+		if (points[1].x == points[0].x) {
+			// separate 1 and 0
+			return _circleCenterBy3Points(points[1], points[2], points[0]);
+		}
+		else if (points[1].x == points[2].x) {
+			// separate 1 and 2
+			return _circleCenterBy3Points(points[2], points[0], points[1]);
+		}
+		// separate 0 and 2
+		return _circleCenterBy3Points(points[0], points[1], points[2]);
 	}
 
 	float getAngleFromCenter(const Point& pointOnCircle, const Point& center) {
