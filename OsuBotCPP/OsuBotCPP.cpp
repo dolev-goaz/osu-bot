@@ -21,7 +21,7 @@ void playBeatmap(std::list<OsuObject*>& objects, std::queue<TimingPoint>& timing
         startTime = clock();
 
         // Get the current timing point
-        while (!timingPoints.empty() && timingPoints.front().time < object->time) {
+        while (!timingPoints.empty() && timingPoints.front().time <= object->time) {
             currentTimingPoint = timingPoints.front();
             timingPoints.pop();
         }
