@@ -17,12 +17,13 @@ namespace mathUtil {
 	}
 
 	Point circleCenterByPoints(const std::vector<Point>& points) {
-		// Don't use a vertical line formed by two points that have the same x value
-		if (points[1].x == points[0].x) {
+		// Don't use a vertical/horizontal line formed by two points that have the same x/y value
+		// TODO: doesn't handle the case there's one vertical line and one horizontal line
+		if (points[1].x == points[0].x || points[1].y == points[0].y) {
 			// separate 1 and 0
 			return _circleCenterBy3Points(points[1], points[2], points[0]);
 		}
-		else if (points[1].x == points[2].x) {
+		else if (points[1].x == points[2].x || points[1].y == points[2].y) {
 			// separate 1 and 2
 			return _circleCenterBy3Points(points[2], points[0], points[1]);
 		}
